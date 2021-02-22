@@ -21,6 +21,9 @@
             :counter="10"
             label="Password"
             required
+            :type="pwdVisibility ? 'text' : 'password'"
+            :append-icon="pwdVisibility ? 'mdi-eye' : 'mdi-eye-off'"
+            @click:append="pwdVisibility = !pwdVisibility"
             @keyup.enter="adminLogin"
           ></v-text-field>
         </v-container>
@@ -36,18 +39,19 @@
 export default {
   data: () => ({
     valid: false,
-    username: 'admin',
-    password: 'admin',
-    nameRules: [v => !!v || 'Name is required']
+    username: "admin",
+    password: "admin",
+    nameRules: [v => !!v || "Name is required"],
+    pwdVisibility: false
   }),
 
   methods: {
     adminLogin() {
-      if (this.username === 'admin' && this.password === 'admin') {
+      if (this.username === "admin" && this.password === "admin") {
         // this.$route.push('/dashboard')
-        console.log(this.$router.push("/dashboard"))
+        console.log(this.$router.push("/dashboard/viewdata"));
       }
     }
   }
-}
+};
 </script>

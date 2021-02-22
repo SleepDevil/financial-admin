@@ -21,6 +21,10 @@ const routes = [
       {
         path: 'modify',
         component: () => import('../components/Modify.vue')
+      },
+      {
+        path: 'viewdata',
+        component: () => import('../views/ViewData.vue')
       }
     ]
   }

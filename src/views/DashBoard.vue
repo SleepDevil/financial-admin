@@ -14,12 +14,15 @@
       </v-btn>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" absolute bottom temporary>
+    <v-navigation-drawer class="h-full" v-model="drawer" fixed temporary>
       <v-list nav>
         <v-list-item-group
           v-model="group"
           active-class="deep-purple--text text--accent-4"
         >
+          <v-list-item link to="/dashboard/viewdata">
+            <v-list-item-title>查看数据</v-list-item-title>
+          </v-list-item>
           <v-list-item link to="/dashboard/modify">
             <v-list-item-title>修改数据</v-list-item-title>
           </v-list-item>
@@ -46,8 +49,8 @@ export default {
 
   watch: {
     group() {
-      this.drawer = false
+      this.drawer = false;
     }
   }
-}
+};
 </script>
