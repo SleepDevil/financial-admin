@@ -1,6 +1,6 @@
 <template>
   <div>
-    <row
+    <Row
       v-for="(value, name, index) in totalData"
       :key="index"
       :selectZhishu="name"
@@ -8,16 +8,16 @@
       :longtermAverage="value[1]"
       :mainContract="value[2]"
       :orderNum="value[3]"
-    ></row>
+    ></Row>
   </div>
 </template>
 
 <script>
-import row from "../components/Row.vue";
+import Row from "../components/Row.vue";
 import request from "../api/axiosInstance.js";
 
 export default {
-  components: { row },
+  components: { Row },
   data: () => ({
     totalData: null
   }),
