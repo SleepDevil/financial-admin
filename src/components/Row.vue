@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import request from "../api/axiosInstance.js";
+import request from '../api/axiosInstance.js'
 
 export default {
   props: {
@@ -56,15 +56,12 @@ export default {
         longtermAverage: this.longtermAverage,
         mainContract: this.mainContract,
         orderNum: this.orderNum
-      };
-      const res = await request.post("/items/delete", item);
+      }
+      const res = await request.post('/items/delete', item)
       if (res.status === 200) {
-        console.log("成功！");
       }
     }
   },
-  beforeMount() {
-    console.log(this.selectZhishu);
-  }
-};
+  beforeMount() {}
+}
 </script>

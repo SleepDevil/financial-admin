@@ -13,8 +13,9 @@
 </template>
 
 <script>
-import Row from "../components/Row.vue";
-import request from "../api/axiosInstance.js";
+import Row from '../components/Row.vue'
+import request from '../api/axiosInstance.js'
+import checkToken from '../api/checkToken'
 
 export default {
   components: { Row },
@@ -23,13 +24,16 @@ export default {
   }),
   methods: {
     async getData() {
-      const res = await request.get("/items/viewdata");
-      console.log(res.data);
-      this.totalData = res.data;
+      const res = await request.get('/items/viewdata')
+      this.totalData = res.data
     }
   },
-  beforeMount() {
-    this.getData();
+  async beforeMount() {
+    const { success } = await checkToken()
+    if(!success) {
+      return
+    }
+    this.getData()
   }
-};
+}
 </script>
