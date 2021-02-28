@@ -1,5 +1,8 @@
 <template>
   <div class="flex flex-wrap justify-between w-4/5 ml-20">
+    <v-snackbar v-model="msg" top timeout="1000" color="success"
+      >删除成功！</v-snackbar
+    >
     <v-text-field
       readonly
       class="w-4 mr-8"
@@ -48,6 +51,11 @@ export default {
       type: Number
     }
   },
+  data() {
+    return {
+      msg: false
+    }
+  },
   methods: {
     async handleDelete() {
       let item = {
@@ -59,9 +67,9 @@ export default {
       }
       const res = await request.post('/items/delete', item)
       if (res.status === 200) {
+        this.msg = true
       }
     }
-  },
-  beforeMount() {}
+  }
 }
 </script>
