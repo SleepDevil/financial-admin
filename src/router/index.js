@@ -25,7 +25,12 @@ const routes = [
       {
         path: 'viewdata',
         component: () => import('../views/ViewData.vue')
+      },
+      {
+        path: 'modifyMainforce',
+        component: () => import('../views/ModifyMainforce.vue')
       }
+
     ]
   }
 ]

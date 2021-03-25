@@ -30,6 +30,9 @@
           <v-list-item link to="/dashboard/modify">
             <v-list-item-title>修改数据</v-list-item-title>
           </v-list-item>
+          <v-list-item link to="/dashboard/modifyMainforce">
+            <v-list-item-title>修改品种主力</v-list-item-title>
+          </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
